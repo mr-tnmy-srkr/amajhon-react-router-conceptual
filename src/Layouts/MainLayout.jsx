@@ -13,7 +13,7 @@ console.log(navigation.state === "loading");
   return (
     <div>
      <Header></Header>
-      <div className="min-h-[80vh]">
+      <div className="min-h-[80vh] my-10">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
