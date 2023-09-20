@@ -7,6 +7,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile.jsx/Profile";
 import EditProfile from "../pages/EdirProfile/EditProfile";
+import getProducts from "../utils/Getproducts";
 
 const myCreatedRoute = createBrowserRouter([
   // This is a fixed item
@@ -22,7 +23,18 @@ const myCreatedRoute = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>,
-        loader: () => fetch(`https://dummyjson.com/products`),
+        // loader: () => fetch(`https://dummyjson.com/products`),
+
+        // or
+
+        /*     loader: async () => {
+           const res = await fetch(`https://dummyjson.com/products`);
+           console.log(res);
+           return res; */
+
+        // or
+
+        loader: getProducts,
       },
       {
         path: "/product/:id",
@@ -36,15 +48,15 @@ const myCreatedRoute = createBrowserRouter([
         children: [
           {
             path: "/dashboard",
-            element: <Dashboard></Dashboard>
+            element: <Dashboard></Dashboard>,
           },
           {
             path: "/dashboard/profile",
-            element: <Profile></Profile>
+            element: <Profile></Profile>,
           },
           {
             path: "/dashboard/editProfile",
-            element: <EditProfile></EditProfile>
+            element: <EditProfile></EditProfile>,
           },
         ],
       },
