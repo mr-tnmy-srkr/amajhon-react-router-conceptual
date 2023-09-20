@@ -1,7 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
+
+
 
 const ProductsCard = ({ product }) => {
   const { id, thumbnail, price, title,description } = product || {};
+  
+  const navigate = useNavigate();
+  const handleSingleItemNavigate = ()=>{
+    // console.log("hello");
+    const user = true;
+    if(user){
+      navigate(`/product/${id}`);
+    }else{
+      navigate("/")
+    }
+  } 
+
+
+
   return (
     <div className="">
       <div className="w-full max-w-sm bg-white border-2 border-gray-400 rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700">
@@ -81,6 +97,14 @@ const ProductsCard = ({ product }) => {
              View Details
             </button>
             </Link>
+            <div>
+            <button onClick={handleSingleItemNavigate}
+              href="#"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+             Navigate
+            </button>
+            </div>
           </div>
         </div>
       </div>
