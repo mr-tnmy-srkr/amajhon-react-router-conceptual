@@ -16,11 +16,11 @@ import { useLoaderData, useParams } from "react-router-dom";
       .then((data) => setProduct(data));
   }, [data.id]);
 //    console.log(product); 
-
 //   const { images, price, title } = product;
 //   console.log(images);
 //  console.log(images[0]);
   return (
+    <div className="flex justify-center items-center mt-16">
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img className="p-8 rounded-t-lg" src={product?.images?.[0]} alt="product image" />
@@ -28,7 +28,7 @@ import { useLoaderData, useParams } from "react-router-dom";
       <div className="px-5 pb-5">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            P{8+6}
+            P{product?.title}
           </h5>
         </a>
         <div className="flex items-center mt-2.5 mb-5">
@@ -83,7 +83,7 @@ import { useLoaderData, useParams } from "react-router-dom";
         </div>
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-            ${6}
+            ${product?.price}
           </span>
           <a
             href="#"
@@ -93,6 +93,7 @@ import { useLoaderData, useParams } from "react-router-dom";
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 };
