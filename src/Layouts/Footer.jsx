@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
   <div>
-      <footer className=" bg-gray-200 p-4">
+      <footer className=" bg-gray-200 p-">
         <div className="w-full max-w-screen-xl mx-auto  md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <a
-              href="https://flowbite.com/"
+          <Link to="/"
               className="flex items-center mb-4 sm:mb-0"
             >
               <img
@@ -16,7 +17,7 @@ const Footer = () => {
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 Amajhon
               </span>
-            </a>
+            </Link>
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
               <li>
                 <a href="#" className="mr-4 hover:underline md:mr-6 ">
